@@ -20,7 +20,7 @@
 
 <style scoped lang="postcss">
   nav {
-    @apply h-20 bg-gray-800 text-white;
+    @apply h-10 bg-gray-800 text-white;
     .wrapper {
       @apply container mx-auto flex w-full items-center justify-between;
       .brand {
