@@ -6,9 +6,9 @@
 <template>
   <nav>
     <div class="wrapper">
-      <div class="brand">
+      <RouterLink :to="{name:'home'}" class="brand">
         <span class="brand-title">{{ brand }}</span>
-      </div>
+      </RouterLink>
       <div class="menu">
         <a href="#" class="menu-items">Departments</a>
         <a href="#" class="menu-items">Settings</a>
