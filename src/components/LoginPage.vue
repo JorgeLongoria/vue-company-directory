@@ -3,6 +3,7 @@
   import { useRouter, useRoute } from 'vue-router'
 
   import { useAuth } from '@/composables/useAuth'
+import { async } from '@firebase/util';
 
   const router = useRouter()
   const route = useRoute()
@@ -10,8 +11,9 @@
   const { login, logout } = useAuth()
   const username = ref('')
   const password = ref('')
-  const logUserIn = () => {
-    if (login(username.value, password.value)) {
+  
+  const logUserIn = async () => {
+    if (await login(username.value, password.value)) {
       if (route.query.redirect) {
         router.push(route.query.redirect)
       } else {
@@ -20,7 +22,8 @@
     } else {
       logout()
     }
-  }
+}
+  
 </script>
 
 <template>
