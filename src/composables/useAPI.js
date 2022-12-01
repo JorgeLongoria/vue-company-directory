@@ -20,7 +20,7 @@ const getEmployees = async () => {
   const { data, headers } = await api.get('/api/employees', {
     params: {
       page: activePage.value,
-      pageSize: pageSize.value,
+      size: pageSize.value,
     },
   })
   employees.value = data
@@ -34,7 +34,15 @@ const getDepartment = async (departmentId) => {
 }
 
 const useAPI = () => {
-  return { employees, pages, activePage, loading, pageSize, getEmployees, getDepartment }
+  return {
+    employees,
+    pages,
+    activePage,
+    loading,
+    pageSize,
+    getEmployees,
+    getDepartment,
+  }
 }
 
 export default useAPI
